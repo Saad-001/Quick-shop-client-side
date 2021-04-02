@@ -14,7 +14,7 @@ const AddProduct = () => {
             price: data.price,
             imageUrl: imageURL
         }
-        const url = `http://localhost:5000/addProduct`;
+        const url = `https://arcane-basin-59090.herokuapp.com/addProduct`;
         console.log(productData)
         fetch(url, {
             method: 'POST',

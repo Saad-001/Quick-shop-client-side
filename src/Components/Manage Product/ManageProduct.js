@@ -7,7 +7,7 @@ const ManageProduct = () => {
 
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://arcane-basin-59090.herokuapp.com/products')
         .then(res => res.json())
         .then(data => {
             setProducts(data)
@@ -16,7 +16,7 @@ const ManageProduct = () => {
     }, [])
 
     const handleClick = (id) => {
-        fetch('http://localhost:5000/deleteOne/' + id)
+        fetch('https://arcane-basin-59090.herokuapp.com/deleteOne/' + id)
         .then(res => res.json())
         .then(data => {
             console.log(data)

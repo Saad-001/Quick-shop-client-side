@@ -11,7 +11,7 @@ const CheckOut = () => {
     const [productData, setProductData] = useState({});
     const {id} = useParams();
     useEffect(() => {
-        fetch('http://localhost:5000/product/' + id)
+        fetch('https://arcane-basin-59090.herokuapp.com/product/' + id)
         .then(res => res.json())
         .then(data => setProductData(data))
     },[id])
@@ -20,7 +20,7 @@ const CheckOut = () => {
     const handleClick = () =>{
         history.push('/orders')
         const orders = {...loggedInUser, ...productData, orderTime: new Date()}
-        fetch('http://localhost:5000/addOrders', {
+        fetch('https://arcane-basin-59090.herokuapp.com/addOrders', {
             method: 'POST',
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify(orders)
